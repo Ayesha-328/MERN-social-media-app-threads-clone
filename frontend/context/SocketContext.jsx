@@ -15,10 +15,14 @@ export const SocketContextProvider = ({ children }) => {
 	const user = useRecoilValue(userAtom);
 
 	useEffect(() => {
-		const socket = io("http://localhost:5000", {
+		const socket = io(process.env.NODE_ENV === 'production'
+			? 'https://your-backend-domain.com'  // Your deployed backend URL
+			: 'http://localhost:5000',  // Your local backend URL
+		{
 			query: {
-				userId: user?._id,
+				userId: user._id,
 			},
+			withCredentials: true
 		});
 
 		setSocket(socket);

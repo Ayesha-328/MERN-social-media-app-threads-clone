@@ -27,7 +27,9 @@ cloudinary.config({
 
 // Middlewares => The funcs that run between req and res
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin: process.env.NODE_ENV === 'production' 
+    ? 'https://threads-app-clone-inue5reo0-ayesha-328s-projects.vercel.app' 
+    : 'http://localhost:3000',
   credentials: true,
 }));
 
