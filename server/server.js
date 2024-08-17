@@ -26,10 +26,10 @@ cloudinary.config({
 });
 
 // Middlewares => The funcs that run between req and res
-// app.use(cors({
-//   origin: 'http://localhost:3000',
-//   credentials: true,
-// }));
+app.use(cors({
+  origin: 'https://mern-social-media-app-threads-clone.vercel.app',
+  credentials: true,
+}));
 
 app.use(express.json({ limit: '10mb' })); // Adjust limit as needed
 app.use(express.urlencoded({ extended: true, limit: '10mb' })); // Adjust limit as needed
