@@ -6,7 +6,7 @@ import useShowToast from '../hooks/useShowToast'
 import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil'
 import conversationsAtom, { readUnreadMessageAtom, selectedConversationAtom } from '../atoms/messagesAtom'
 import userAtom from "../atoms/userAtom"
-import { useSocket } from '../../context/SocketContext'
+import { useSocket } from '../context/SocketContext'
 
 
 const MessageContainer = () => {

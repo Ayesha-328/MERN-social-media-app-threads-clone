@@ -12,7 +12,7 @@ import { useSetRecoilState } from 'recoil'
 import { BsFillChatQuoteFill } from 'react-icons/bs'
 import { MdOutlineSettings } from 'react-icons/md'
 import { readUnreadMessageAtom, selectedConversationAtom } from '../atoms/messagesAtom'
-import { useSocket } from '../../context/SocketContext'
+import { useSocket } from '../context/SocketContext'
 import MessageSound from '../assets/sound/message.mp3'
 
 const Header = () => {
