@@ -9,7 +9,7 @@ export default defineConfig({
     // to get rid of the cors errors
     proxy:{
       "/api" : {
-        target : "http://localhost:5000",
+        target : "https://mern-social-media-app-threads-clone.vercel.app",
         changeOrigin: true,
         secure: false,
       }
