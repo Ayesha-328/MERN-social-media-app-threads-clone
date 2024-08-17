@@ -7,7 +7,7 @@ import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil'
 import conversationsAtom, { readUnreadMessageAtom, selectedConversationAtom } from '../atoms/messagesAtom'
 import userAtom from "../atoms/userAtom"
 import { useSocket } from '../../context/SocketContext'
-import MessageSound from '../assets/sound/message.mp3'
+
 
 const MessageContainer = () => {
     const showToast = useShowToast()
@@ -29,9 +29,9 @@ const MessageContainer = () => {
             const isCurrentPageChat = window.location.pathname.includes('/chat');
     
             // If the message is from the current conversation, add it to the messages
-            if (isCurrentConversation) {
-                setMessages(prev => [...prev, message])
-            }
+            // if (isCurrentConversation) {
+            //     setMessages(prev => [...prev, message])
+            // }
     
             // Update the last message preview for the relevant conversation
             setConversations(prev => {

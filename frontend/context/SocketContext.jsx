@@ -15,26 +15,19 @@ export const SocketContextProvider = ({ children }) => {
 	const user = useRecoilValue(userAtom);
 
 	useEffect(() => {
-		const socket = io(process.env.NODE_ENV === 'production'
-			? 'https://your-backend-domain.com'  // Your deployed backend URL
-			: 'http://localhost:5000',  // Your local backend URL
-		{
+		const socket = io("/", {
 			query: {
-				userId: user._id,
+				userId: user?._id,
 			},
-			withCredentials: true
 		});
 
 		setSocket(socket);
 
-        // listens to event both in the client and the server
 		socket.on("getOnlineUsers", (users) => {
 			setOnlineUsers(users);
 		});
-
 		return () => socket && socket.close();
 	}, [user?._id]);
-    // console.log(onlineUsers)
 
-	return <SocketContext.Provider value={{ socket , onlineUsers}}>{children}</SocketContext.Provider>;
+	return <SocketContext.Provider value={{ socket, onlineUsers }}>{children}</SocketContext.Provider>;
 };
