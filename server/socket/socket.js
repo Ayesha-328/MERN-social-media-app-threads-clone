@@ -7,10 +7,17 @@ import Conversation from "../models/conversationModel.js";
 const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
+<<<<<<< HEAD
 	cors: {
 		origin: "http://localhost:3000",
 		methods: ["GET", "POST"],
 	},
+=======
+    cors: {
+        origin: "https://mern-social-media-app-threads-clone.vercel.app",
+        methods: ["GET", "POST"]
+    }
+>>>>>>> d1ea470bcc1bf15b57781169efb287c452696049
 });
 
 export const getRecipientSocketId = (recipientId) => {
