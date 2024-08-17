@@ -6,6 +6,7 @@
   "scripts": {
    "dev": "NODE_ENV=development nodemon server/server.js",
 		"start": "NODE_ENV=production node server/server.js",
+    "prebuild": "npm install --include=dev --prefix frontend",
 		"build": "npm install && npm install --prefix frontend && npm run build --prefix frontend"
   },
   "type": "module",
